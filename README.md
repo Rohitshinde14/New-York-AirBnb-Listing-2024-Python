@@ -4,7 +4,19 @@
 ![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/airbnb%20logo.png?raw=true)
 
 
+## Table Of Contents
 
+- [Project Overview](#project-overview)
+- [Objective](#objective)
+- [Dataset](#dataset)
+- [Tools](#tools)
+- [Steps And Workflow](#steps-and-workflow)
+- [Key Findings and Insights](#key-findings-and-insights)
+- [ How to Run This Project](#how-to-run-this-project)
+- [Recommendations](#recommendations)
+- [Future Work](#future-work)
+- [Conclusion](#conclusion)
+- [Contact](#contact)
 
 ## Project Overview
 This project performs Exploratory Data Analysis (EDA) on New York Airbnb data to uncover trends and patterns in rental listings. We use libraries like Pandas, Numpy, Matplotlib, Seaborn for cleaning, visualization and analysis.
@@ -27,6 +39,14 @@ The dataset contains 20,765 entries and 22 features, including:
 * room_type: Type of accommodation (e.g., entire home, private room)  
 * reviews_per_month: Average monthly reviews for the listing  
 * availability_365: Number of available days in the year
+
+## Tools
+* Jupiter Notebook: Python
+* Python libraries:
+   * Pandas
+   * Numpy
+   * Matplotlib
+   * Seaborn
 ## Steps And Workflow
 1. Data Cleaning
 * Handle missing data: price, neighborhood, and beds columns had null values.
