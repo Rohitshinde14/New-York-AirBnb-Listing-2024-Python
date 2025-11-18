@@ -1,7 +1,7 @@
 
 # Airbnb Listings EDA Project: New York 2024
 
-![image alt]()
+![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/airbnb%20logo.png?raw=true)
 
 
 
