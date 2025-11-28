@@ -77,6 +77,9 @@ Used pair plots to show relationships between number of reviews, price, and avai
 * Bar Charts: Displaying room types and neighborhood group distributions.
   
 ## Key Findings and Insights
+
+![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/New%20York%20Boroughs.png)
+
 **1. Availability_365 Distribution (Histogram)**
 
 ![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/Availability_365%20Distribution.png)
