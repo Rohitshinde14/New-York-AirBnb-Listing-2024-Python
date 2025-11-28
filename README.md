@@ -48,11 +48,12 @@ The dataset contains 20,765 entries and 22 features, including:
    * Matplotlib
    * Seaborn
 ## Steps And Workflow
-1. Data Cleaning
+**1. Data Cleaning**
 * Handle missing data: price, neighborhood, and beds columns had null values.
 * Fix data types: Converted last_review to a datetime object.
 * Remove outliers: Listings with prices > $1,000 were capped to avoid skewed visualizations.
-2. EDA (Exploratory Data Analysis)
+  
+**2. EDA (Exploratory Data Analysis)**
 * Room type distribution:
 Visualized the count of each room type using bar plots.
 Identified Entire home/apt as the most common room type.
@@ -69,32 +70,130 @@ Analyzed hosts with multiple listings using boxplots to identify key contributor
 * Review behavior:
 Used pair plots to show relationships between number of reviews, price, and availability.
 
-3. Data Visualization
+**3. Data Visualization**
 * Pairplot: To see correlations among price, availability, and number of reviews.
 * Heatmap: Showing correlations among numerical features.
 * Histograms and Boxplots: To detect outliers in price.
 * Bar Charts: Displaying room types and neighborhood group distributions.
+  
 ## Key Findings and Insights
-* Price Trends:
+**1. Availability_365 Distribution (Histogram)**
 
-Manhattan has the most expensive listings, followed by Brooklyn.
-Entire homes/apartments cost significantly more than private or shared rooms.
+![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/Availability_365%20Distribution.png)
 
-* Room Type Distribution:
+There are two major peaks in availability:
 
-Entire homes/apartments are the most common, but private rooms offer budget-friendly options.
+* Very low availability (0–30 days) which indicates highly booked or highly demanded listings.
 
-* Outliers in Price:
+* Very high availability (350–365 days) representing listings that remain mostly unbooked—possibly overpriced or newly created listings.
 
-Few listings priced at $10,000+ were detected, indicating the need to filter such extreme values.
+* Mid-range availability (100–250 days) has a moderate distribution, suggesting average demand.
 
-* Availability Patterns:
+* This uneven distribution highlights a bimodal trend: some listings are extremely popular, while others get very few bookings.
 
-Listings with high availability tend to have lower prices and more reviews, likely due to better guest experience.
 
-* Host Behavior:
+**2. Geographical Distribution of Airbnb Listings (Scatter Plot)**
 
-Some hosts manage multiple listings, indicating a trend toward professional hosting.
+![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/Geographical%20Representation%20Of%20Airbnb%20Listings.png)
+
+* Listings are heavily concentrated in Manhattan and Brooklyn, confirming these boroughs as prime Airbnb zones.
+
+* Manhattan has a higher density of Entire home/apartment listings, likely due to tourism-driven demand.
+
+* Brooklyn shows a more balanced mix of private rooms and entire homes, appealing to both tourists and budget travelers.
+
+* Queens, Bronx, and Staten Island have fewer listings and more scattered distributions.
+
+* High-density clusters correspond to major tourist locations such as Lower Manhattan, Midtown, Williamsburg, and Harlem.
+
+
+**3. Correlation Heatmap**
+
+![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/Heatmap.png)
+
+* Price has a positive correlation with number of beds (0.42) — more beds generally mean higher prices.
+
+* Number of reviews and reviews per month are strongly correlated (0.63), meaning listings that get reviews tend to get them consistently.
+ 
+* Price shows almost no correlation with:
+
+  -minimum nights
+
+  -number of reviews
+
+  -latitude/longitude
+* This suggests price is more influenced by room type and neighborhood, not number of reviews or location coordinates.
+
+* Overall, the dataset shows weak correlations, implying Airbnb listing characteristics are diverse and not linearly related.
+
+
+**4. Locality and Review Dependency (Scatter Plot: Reviews vs Price)**
+
+![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/Locality%20And%20Review%20Dependency.png)
+
+* Most listings fall within 0–300 reviews and prices below $200.
+
+* Manhattan listings dominate the high-price region—even low reviewed Manhattan listings are priced higher than other boroughs.
+
+* A negative trend appears: as number of reviews increases, prices tend to decrease slightly — lower-priced listings attract more guests and reviews.
+
+* Outliers exist with 1,000+ reviews, mostly lower-priced Manhattan or Brooklyn rooms.
+
+
+**5. Pairplot (Multivariable Relationship)**
+
+![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/Pairplot.png)
+
+* Price shows right-skewness — many low-priced listings, fewer extremely high-priced ones.
+
+* Minimum nights appears heavily right-skewed with occasional extreme values (e.g., long-term stays).
+
+* Room type patterns:
+
+  -Entire home/apartment tends to have higher prices and availability variation.
+
+  -Private rooms cluster in the low-price and low-minimum-nights region.
+
+* The combination of variables reveals clear clustering by room type, especially for:
+
+  -price
+
+  -number of reviews
+
+  -availability
+
+
+**6. Price Distribution by Neighbourhood Group & Room Type (Bar Plot)**
+
+![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/Price%20Distribution%20By%20Neighbourhood%20Group.png)
+
+* Manhattan is the most expensive borough across all room types.
+
+  -Entire home/apartment: ~$250
+
+  -Hotel room: ~$300
+
+* Brooklyn is the second-priciest but significantly cheaper than Manhattan.
+
+* Queens, Bronx, and Staten Island have moderate to low prices, making them suitable for budget-friendly travel.
+
+* Hotel rooms are consistently the costliest category across regions.
+
+* Shared rooms remain the cheapest option everywhere.
+
+
+**7. Price Distribution (Histogram)**
+
+![image alt](https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/Price%20Distribution.png)
+
+* Most listings are priced between $50–$200, forming the main distribution peak.
+
+* Very few listings exceed $500+, confirming these as luxury or premium properties.
+
+* The long right tail indicates high price outliers, typical for Manhattan penthouses or luxury stays.
+
+* The distribution shows clear price skewness, suggesting a few expensive listings pull up the average.
+
 ## How to Run This Project
 * Clone the repository:
 git clone https://github.com/Rohitshinde14/New-York-AirBnb-Listing-2024-Python/blob/main/new_york_airbnb_project.ipynb
@@ -105,20 +204,23 @@ jupyter notebook new_york_airbnb_project
 
 
 ## Recommendations
-* For Guests:
+* Adjust prices for listings with very high availability (350+ days).
 
-Look for listings with high availability and good reviews for a better experience.
-Private rooms in Brooklyn offer affordable stays compared to Manhattan.
-* For Hosts:
+* Improve listing quality with better photos and more guest reviews.
 
-Improve availability and review response rates to attract more bookings.
-Manage pricing effectively to compete within the borough's market.
+* Offer flexible/shorter minimum-night stays to increase bookings.
+
+* Guests can choose outer area for cheaper stays.
+
+* Platform/analysts should flag overpriced or underperforming listings.
+ 
 ## Future Work
 * Perform sentiment analysis on reviews to better understand guest experiences.
-* Create an interactive dashboard using Plotly or powerbi for live monitoring.
+* Create an interactive dashboard using Plotly or PowerBi for live monitoring.
 
 ## Conclusion
-This project offers valuable insights into the New York Airbnb market, helping both guests and hosts make informed decisions. By using EDA techniques, we identified key trends and developed actionable recommendations. Future improvements can involve advanced analytics and predictive modeling to further enhance the findings.
+NYC Airbnb data shows Manhattan is the most expensive and busiest market, while outer boroughs offer affordable options. Most listings fall within $50–$200, with some high-price outliers. Availability patterns show some listings are extremely popular while others stay unbooked, highlighting the need for better pricing and listing optimization.
+
 ## Contact
 Rohit Shinde  
 Data Analyst
