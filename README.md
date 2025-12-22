@@ -221,8 +221,11 @@ jupyter notebook new_york_airbnb_project
 * Perform sentiment analysis on reviews to better understand guest experiences.
 * Create an interactive dashboard using Plotly or PowerBi for live monitoring.
 
-## Conclusion
-NYC Airbnb data shows Manhattan is the most expensive and busiest market, while outer boroughs offer affordable options. Most listings fall within $50–$200, with some high-price outliers. Availability patterns show some listings are extremely popular while others stay unbooked, highlighting the need for better pricing and listing optimization.
+## Results And Conclusion
+- Identified **70%** listings priced between **$50–$200**, **Manhattan** as the highestpriced borough, and high-availability listings (350+ days) indicating underperformance.
+- NYC Airbnb data shows Manhattan is the most expensive and busiest market, while outer boroughs offer affordable options.
+- Most listings fall within $50–$200, with some high-price outliers.
+  Availability patterns show some listings are extremely popular while others stay unbooked, highlighting the need for better pricing and listing optimization.
 
 ## Contact
 Rohit Shinde  
